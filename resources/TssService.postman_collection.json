@@ -1,10 +1,67 @@
 {
 	"info": {
-		"_postman_id": "a011896c-69dd-469a-b4af-d1edcf9b18e4",
+		"_postman_id": "97f00f21-cbf2-4bac-a40c-dad49ade73de",
 		"name": "TssService",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "root",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "toor",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/login/?next=/admin/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"login",
+						""
+					],
+					"query": [
+						{
+							"key": "next",
+							"value": "/admin/"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "Token",
 			"request": {
@@ -53,7 +110,7 @@
 					"urlencoded": [
 						{
 							"key": "token",
-							"value": "63dc41c9-5a92-4197-a733-fa1ffcfdcc2f",
+							"value": "ff373e69-5c15-465e-a8ee-5823563bbd39",
 							"type": "text"
 						},
 						{
@@ -103,9 +160,8 @@
 						},
 						{
 							"key": "job",
-							"value": "80aeef31-02dc-4189-a1ec-7ff425d3f8ac",
-							"type": "text",
-							"disabled": true
+							"value": "25c486aa-7c02-4536-a9da-528de41b3c63",
+							"type": "text"
 						},
 						{
 							"key": "should_replace",
@@ -152,7 +208,7 @@
 					"urlencoded": [
 						{
 							"key": "token",
-							"value": "63dc41c9-5a92-4197-a733-fa1ffcfdcc2f",
+							"value": "ff373e69-5c15-465e-a8ee-5823563bbd39",
 							"type": "text"
 						},
 						{

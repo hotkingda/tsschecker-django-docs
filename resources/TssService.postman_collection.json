@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "a011896c-69dd-469a-b4af-d1edcf9b18e4",
+		"name": "TssService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token.json",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token.json"
+					]
+				},
+				"description": "Get access token for other apis, staff member required."
+			},
+			"response": []
+		},
+		{
+			"name": "Sign Device",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "63dc41c9-5a92-4197-a733-fa1ffcfdcc2f",
+							"type": "text"
+						},
+						{
+							"key": "ecid",
+							"value": "7961160882716718",
+							"type": "text"
+						},
+						{
+							"key": "ios_version",
+							"value": "12.3",
+							"type": "text"
+						},
+						{
+							"key": "ios_build",
+							"value": "15F5061e",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ap_nonce",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "sep_nonce",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "is_ota",
+							"value": "false",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "is_latest",
+							"value": "true",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "async",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "job",
+							"value": "80aeef31-02dc-4189-a1ec-7ff425d3f8ac",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "should_replace",
+							"value": "true",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/sign/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"sign",
+						""
+					]
+				},
+				"description": "Get iOS firmware signature of a specific device."
+			},
+			"response": []
+		},
+		{
+			"name": "Register Device",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "63dc41c9-5a92-4197-a733-fa1ffcfdcc2f",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "ZhengR",
+							"type": "text"
+						},
+						{
+							"key": "hw_model",
+							"value": "N841AP",
+							"type": "text"
+						},
+						{
+							"key": "product_type",
+							"value": "iPhone11,8",
+							"type": "text"
+						},
+						{
+							"key": "ios_version",
+							"value": "12.3.1",
+							"type": "text"
+						},
+						{
+							"key": "ecid",
+							"value": "7961160882716718",
+							"type": "text"
+						},
+						{
+							"key": "ios_build",
+							"value": "15F5061e",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "generator",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

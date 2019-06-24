@@ -1,0 +1,27 @@
+{
+    "title": "tsschecker-django API Documentation",
+    "author" : "i_82",
+    "description": "Main documentation site of Y3 Toolbox.",
+    "language" : "zh-hans",
+    "links" : {
+        "sidebar" : {
+            "返回站点": "https://tss.82flex.com/admin/"
+        }
+    },
+    "plugins": [
+        "-sharing",
+        "-lunr",
+        "back-to-top-button",
+        "-search",
+        "search-pro",
+        "fontsettings",
+        "expandable-chapters",
+        "-livereload",
+        "splitter"
+    ],
+    "pluginsConfig": {
+		"fontsettings": {
+			"family": "sans"
+        }
+    }
+}

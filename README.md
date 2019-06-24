@@ -10,7 +10,7 @@
 
 ```text
 POST /admin/login/?next=/admin/ HTTP/1.1
-Host: 127.0.0.1:8000
+Host: tss.82flex.com
 Content-Type: application/x-www-form-urlencoded
 cache-control: no-cache
 
@@ -25,7 +25,7 @@ username=root&password=toor
 
 ```text
 GET /api/token.json HTTP/1.1
-Host: 127.0.0.1:8000
+Host: tss.82flex.com
 Content-Type: application/x-www-form-urlencoded
 cache-control: no-cache
 ```
@@ -59,12 +59,11 @@ cache-control: no-cache
 
 ```text
 POST /api/register/ HTTP/1.1
-Host: 127.0.0.1:8000
+Host: tss.82flex.com
 Content-Type: application/x-www-form-urlencoded
 User-Agent: PostmanRuntime/7.15.0
 Accept: */*
 Cache-Control: no-cache
-Host: 127.0.0.1:8000
 cookie: sessionid=w1p02df79lcsnzicmvuw4vmaxpwofe88
 accept-encoding: gzip, deflate
 content-length: 137
@@ -119,7 +118,8 @@ token=ff373e69-5c15-465e-a8ee-5823563bbd39&name=ZhengR&hw_model=N841AP&product_t
     - `404`, 找不到指定设备, 设备需要先注册
     - `500`, 不可替换现有签名
     - `501`, 该设备在指定 iOS 版本上的签名已被苹果关闭
-    - `502`, 签名保存失败, 请检查服务器状态
+    - `502`, 签名保存失败, 请联系管理员检查服务器状态
+    - `503`, 日志保存失败, 请联系管理员检查文件系统权限
 * `msg`, string, 错误描述
 * `job`, object, 异步任务信息, 仅当 `async` 为 `true` 时存在
     - `id`, string, 任务 ID
@@ -131,12 +131,11 @@ token=ff373e69-5c15-465e-a8ee-5823563bbd39&name=ZhengR&hw_model=N841AP&product_t
 
 ```text
 POST /api/sign/ HTTP/1.1
-Host: 127.0.0.1:8000
+Host: tss.82flex.com
 Content-Type: application/x-www-form-urlencoded
 User-Agent: PostmanRuntime/7.15.0
 Accept: */*
 Cache-Control: no-cache
-Host: 127.0.0.1:8000
 cookie: sessionid=w1p02df79lcsnzicmvuw4vmaxpwofe88
 accept-encoding: gzip, deflate
 content-length: 133
@@ -159,12 +158,11 @@ token=ff373e69-5c15-465e-a8ee-5823563bbd39&ecid=7961160882716718&ios_version=12.
 
 ```text
 POST /api/sign/ HTTP/1.1
-Host: 127.0.0.1:8000
+Host: tss.82flex.com
 Content-Type: application/x-www-form-urlencoded
 User-Agent: PostmanRuntime/7.15.0
 Accept: */*
 Cache-Control: no-cache
-Host: 127.0.0.1:8000
 cookie: sessionid=w1p02df79lcsnzicmvuw4vmaxpwofe88
 accept-encoding: gzip, deflate
 content-length: 92
@@ -189,12 +187,11 @@ token=ff373e69-5c15-465e-a8ee-5823563bbd39&ecid=7961160882716718&ios_version=12.
 
 ```text
 POST /api/sign/ HTTP/1.1
-Host: 127.0.0.1:8000
+Host: tss.82flex.com
 Content-Type: application/x-www-form-urlencoded
 User-Agent: PostmanRuntime/7.15.0
 Accept: */*
 Cache-Control: no-cache
-Host: 127.0.0.1:8000
 cookie: sessionid=w1p02df79lcsnzicmvuw4vmaxpwofe88
 accept-encoding: gzip, deflate
 content-length: 133

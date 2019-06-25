@@ -228,5 +228,6 @@ token=ff373e69-5c15-465e-a8ee-5823563bbd39&ecid=7961160882716718&ios_version=12.
 
 [Postman V2.1](https://www.getpostman.com/)
 
-[下载示例 Collection](resources/TssService.postman_collection.json)
+[下载示例 Collection][1]
 
+[1]: /docs/resources/TssService.postman_collection.json "Download Collection"

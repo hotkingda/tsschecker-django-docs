@@ -1,4 +1,4 @@
-## tsschecker-django API Documentation
+# tsschecker-django API Documentation
 
 所有请求内容类型是 `application/x-www-form-urlencoded`
 

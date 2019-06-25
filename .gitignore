@@ -1,4 +1,15 @@
 .DS_Store
-/_book/
+
 /node_modules/
+/_book/
+
+/FixReadme/
+/XcodeBuild/
+/Releases/
+
+package-lock.json
+build.sh
+FixReadmeSwift
+
+sitemap.txt
 

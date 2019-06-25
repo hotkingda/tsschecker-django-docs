@@ -1,4 +1,3 @@
 # Summary
 
-* [tsschecker-django API Documentation](README.md)
-
+- [tsschecker-django API Documentation](README.md)

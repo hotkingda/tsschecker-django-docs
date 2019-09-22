@@ -27,7 +27,7 @@ username=root&password=toor
 GET /api/token.json HTTP/1.1
 Host: tss.82flex.com
 Content-Type: application/x-www-form-urlencoded
-cache-control: no-cache
+Cache-Control: no-cache
 ```
 
 ### 响应数据
@@ -49,7 +49,7 @@ cache-control: no-cache
 ### 请求参数
 
 * `token`, string, **Access Token**
-* `ecid`, string, 设备 ECID, 即 `UniqueChipID`
+* `ecid`, string, **设备 ECID**, 即 `UniqueChipID` 或 `DieID`, 可以为十进制或十六进制数
 * `name`, string, 设备名称
 * `hw_model`, string, 平台型号, 如 `n90ap`
 * `product_type`, string, 产品型号, 如 `iPhone10,3`
@@ -64,11 +64,9 @@ Content-Type: application/x-www-form-urlencoded
 User-Agent: PostmanRuntime/7.15.0
 Accept: */*
 Cache-Control: no-cache
-cookie: sessionid=w1p02df79lcsnzicmvuw4vmaxpwofe88
-accept-encoding: gzip, deflate
-content-length: 137
+Accept-Encoding: gzip, deflate
+Content-Length: 137
 Connection: keep-alive
-cache-control: no-cache
 
 token=ff373e69-5c15-465e-a8ee-5823563bbd39&name=ZhengR&hw_model=N841AP&product_type=iPhone11%2C8&ios_version=12.3.1&ecid=7961160882716718
 ```
@@ -96,7 +94,7 @@ token=ff373e69-5c15-465e-a8ee-5823563bbd39&name=ZhengR&hw_model=N841AP&product_t
 
 * `token`, string, **Access Token**
 * `async`, bool, 是否异步获取, 同步请求时为 `false`
-* `ecid`, string, **设备 ECID**
+* `ecid`, string, **设备 ECID**, 可以为十进制或十六进制数
 * `ios_version`, string, **申请签名的** iOS 版本, 如 `11.4`
 * `ios_build`, string, **申请签名的** iOS 构建号, 如 `15F5061e`. 可省略
 * `ap_nonce`, string, 固定 AP Nonce. 可省略
@@ -136,11 +134,9 @@ Content-Type: application/x-www-form-urlencoded
 User-Agent: PostmanRuntime/7.15.0
 Accept: */*
 Cache-Control: no-cache
-cookie: sessionid=w1p02df79lcsnzicmvuw4vmaxpwofe88
-accept-encoding: gzip, deflate
-content-length: 133
+Accept-Encoding: gzip, deflate
+Content-Length: 133
 Connection: keep-alive
-cache-control: no-cache
 
 token=ff373e69-5c15-465e-a8ee-5823563bbd39&ecid=7961160882716718&ios_version=12.3&async=false
 ```
@@ -163,11 +159,9 @@ Content-Type: application/x-www-form-urlencoded
 User-Agent: PostmanRuntime/7.15.0
 Accept: */*
 Cache-Control: no-cache
-cookie: sessionid=w1p02df79lcsnzicmvuw4vmaxpwofe88
-accept-encoding: gzip, deflate
-content-length: 92
+Accept-Encoding: gzip, deflate
+Content-Length: 92
 Connection: keep-alive
-cache-control: no-cache
 
 token=ff373e69-5c15-465e-a8ee-5823563bbd39&ecid=7961160882716718&ios_version=12.3&async=true
 ```
@@ -221,6 +215,34 @@ token=ff373e69-5c15-465e-a8ee-5823563bbd39&ecid=7961160882716718&ios_version=12.
 
 ----
 
+## /api/fetch/ 下载设备固件签名
+
+### 请求参数
+
+* `token`, string, **Access Token**
+* `ecid`, string, **设备 ECID**, 可以为十进制或十六进制数
+* `blob_version`, string, **下载签名的** iOS 版本, 如 `11.4`
+* `blob_build`, string, **下载签名的** iOS 构建号, 如 `15F5061e`. 可省略
+
+### 响应数据
+
+* `status`, int, 状态代码
+    - `200`, 获取下载地址成功
+    - `400`, 请求格式不正确
+    - `403`, 没有权限访问
+    - `404`, 找不到指定设备, 设备需要先注册
+* `msg`, string, 错误描述
+* `url`, string, 固件签名下载地址
+
+```json
+{
+    "status": 200,
+    "url": "/resources/shsh2/7961160882716718/12.4.1-16G102/apnonce/7961160882716718_iPhone11%2C8_n841ap_12.4.1-16G102_73bb5d57fdc25f5d0062804fdc3f85bc06982a32c79a4cdfdc0f0517bb90bde3.shsh2"
+}
+```
+
+----
+
 ## Postman Collection
 
 [Postman V2.1](https://www.getpostman.com/)
@@ -228,3 +250,4 @@ token=ff373e69-5c15-465e-a8ee-5823563bbd39&ecid=7961160882716718&ios_version=12.
 [下载示例 Collection][1]
 
 [1]: /docs/resources/TssService.postman_collection.json "Download Collection"
+

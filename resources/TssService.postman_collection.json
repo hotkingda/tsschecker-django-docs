@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "97f00f21-cbf2-4bac-a40c-dad49ade73de",
+		"_postman_id": "a011896c-69dd-469a-b4af-d1edcf9b18e4",
 		"name": "TssService",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -33,7 +33,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/admin/login/?next=/admin/",
+					"raw": "http://127.0.0.1:8000/admin/login/?next=/api/token.json",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -50,12 +50,7 @@
 					"query": [
 						{
 							"key": "next",
-							"value": "/admin/"
-						},
-						{
-							"key": "",
-							"value": "",
-							"disabled": true
+							"value": "/api/token.json"
 						}
 					]
 				}
@@ -110,12 +105,14 @@
 					"urlencoded": [
 						{
 							"key": "token",
-							"value": "ff373e69-5c15-465e-a8ee-5823563bbd39",
+							"value": "63dc41c9-5a92-4197-a733-fa1ffcfdcc2f",
+							"description": "access token",
 							"type": "text"
 						},
 						{
 							"key": "ecid",
 							"value": "7961160882716718",
+							"description": "ecid (dec or hex)",
 							"type": "text"
 						},
 						{
@@ -160,8 +157,9 @@
 						},
 						{
 							"key": "job",
-							"value": "25c486aa-7c02-4536-a9da-528de41b3c63",
-							"type": "text"
+							"value": "80aeef31-02dc-4189-a1ec-7ff425d3f8ac",
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "should_replace",
@@ -208,7 +206,7 @@
 					"urlencoded": [
 						{
 							"key": "token",
-							"value": "ff373e69-5c15-465e-a8ee-5823563bbd39",
+							"value": "63dc41c9-5a92-4197-a733-fa1ffcfdcc2f",
 							"type": "text"
 						},
 						{
@@ -263,6 +261,57 @@
 					"path": [
 						"api",
 						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Blobs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "abd0cd57-ee13-41fb-ac1f-b9d53e53047c",
+							"type": "text"
+						},
+						{
+							"key": "ecid",
+							"value": "0x1c48a2366a002e",
+							"type": "text"
+						},
+						{
+							"key": "blob_version",
+							"value": "12.4.1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/fetch/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"fetch",
 						""
 					]
 				}

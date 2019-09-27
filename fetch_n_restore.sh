@@ -104,8 +104,8 @@ fi
 
 echo -e "[-] ${GREEN}futurerestore device...${RESET}"
 if [ ${HWMODEL} == "N71AP" ]; then
-  echo -e ""
+  # your futurerestore commands for N71AP
 elif [ ${HWMODEL} == "N71MAP" ]; then
-  echo -e ""
+  # your futurerestore commands for N71MAP
 fi
 
